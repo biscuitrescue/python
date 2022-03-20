@@ -11,7 +11,6 @@ root.title("Happy Anniversary :)")
 root.configure(background="#282a36")
 root.geometry("1200x700")
 
-# dir2="/home/trogdor/.photos/"
 dir2=getcwd()+'/photos/'
 x=listdir(dir2)
 l=[]

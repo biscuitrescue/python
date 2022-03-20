@@ -95,7 +95,7 @@ e2=Entry(root,bg="#aaeedd", fg="#000000", font=("space mono for powerline", 12))
 b1=Button(root,bg="#FF7696", fg="#000000", font=("space mono for powerline", 12), command=get_directory, text="Set Directory")
 b2=Button(root,bg="#FF7696", fg="#000000", font=("space mono for powerline", 12), text="Set Wallpaper", command=lambda:set_wallpaper(1))
 b3=Button(root,bg="#FF7696", fg="#000000", font=("space mono for powerline", 12), text="Preview", command=lambda:set_wallpaper(2))
-L1 = Label(root,text=text,bg="#f1fa8c",justify="left",anchor="nw", font=("space mono for powerline",12))
+L1 = Label(root,text=text,bg="#f1fa8c",fg="#000000", justify="left",anchor="nw", font=("space mono for powerline",12))
 
 e1.place(x=140, y=105, height=30, width=300)
 b1.place(x=220, y=145, height=30, width=145)

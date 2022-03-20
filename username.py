@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 from tkinter import *
-# from tkinter.ttk import *
 
 root=Tk()
 root.title("User Store")
 root.configure(background="#2e3440")
+root.geometry("500x200")
 
 e=Entry(root, width=30, bg='#aaeedd', fg='#000000')
 e.grid(row=0,column=0,columnspan=2, ipadx=20, ipady=5)
