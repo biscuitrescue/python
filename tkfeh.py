@@ -10,7 +10,7 @@ root.configure(background="#282a36")
 root.geometry("1100x700")
 text='\n Wallpapers \n\n'
 scrollbar = Scrollbar(root)
-scrollbar.pack(side=RIGHT, fill=Y)
+scrollbar.place(x=50, y=0, height=700, width=30)
 
 y=subprocess.Popen('echo $HOME', shell=True, stdout=subprocess.PIPE)
 out=y.communicate()[0].decode().strip()+'/'
