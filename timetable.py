@@ -3,47 +3,22 @@
 import datetime
 
 x=datetime.datetime.today().weekday()
-x=x+1
+x+=1
 
-if x==1:
-    day='   Monday:'
-    classes='''
-        3:30 PM - 5:30 PM | VMC
-        6:00 PM - 8:00 PM | VMC
-    '''
-elif x==2:
-    day='   Tuesday:'
-    classes='''
-        7:00 PM - 9:00 PM | Physics
-        7:00 PM - 9:00 PM | Chemistry
-    '''
-elif x==3:
-    day='   Wednesday:'
-    classes='''
-        3:30 PM - 5:30 PM | VMC
-        6:00 PM - 8:00 PM | VMC
-    '''
-elif x==4:
-    day='   Thursday:'
-    classes='''
-        7:00 PM - 9:00 PM | Physics
-        7:00 PM - 9:00 PM | Chemistry
-    '''
-elif x==5:
-    day='   Friday:'
-    classes='''
-        3:30 PM - 5:30 PM | VMC
-        6:00 PM - 8:00 PM | VMC
-    '''
-elif x==6:
-    day='   Saturday:'
-    classes='''
-        11:30 AM - 1:00 PM | Chemistry
-    '''
-else:
-    day='   Sunday:'
-    classes='''
-        9:00 AM - 11:00 AM | Physics
-    '''
+print()
 
-print(day,classes,sep="\n")
+days={
+
+    1:' Monday\n\tNone',
+    2:' Tuesday\n\t5:00 PM - 7:00 PM | Physics',
+    3:' Wednesday\n\t8:15 PM - 10:15 PM | Chemistry',
+    4:' Thursday\n\t5:30 PM - 7:30 PM | Physics',
+    5:' Friday\n\t8:15 PM - 10:15 PM | Chemistry',
+    6:' Saturday\n\t9:30 AM - 4:00 PM | VMC',
+    7:' Sunday\n\t9:30 AM - 4:00 PM | VMC',
+
+}
+
+for i in range(len(days)):
+    if i==x:
+        print(days[x])

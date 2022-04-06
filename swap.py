@@ -26,9 +26,9 @@ while True:
         if not (k.isalpha()):
             mem+=k
     if len(disk)==0 and float(mem)>=maxmem:
-        cmd='sudo swapon /dev/'+swapdisk
+        cmd='sudo swapon /dev/{swapdisk}'
         run(cmd, shell=True)
     if len(disk)>0 and float(mem)<maxmem:
-        cmd='sudo swapoff /dev/'+swapdisk
+        cmd=f'sudo swapoff /dev/{swapdisk}'
         run(cmd, shell=True)
     sleep(1)
