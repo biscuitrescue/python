@@ -43,11 +43,6 @@ def make_pass(password: str):
     with open("key.txt", "r") as f:
         key=f.read().strip()
 
-    # s=""
-    # for i in password:
-    #     encrypt=dict(
-    #
-    #      )
 
 giv=input("Enter your pass: ")
 make_pass(giv)

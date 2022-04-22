@@ -10,9 +10,9 @@ print()
 days={
 
     1:' Monday\n\tNone',
-    2:' Tuesday\n\t5:00 PM - 7:00 PM | Physics',
+    2:' Tuesday\n\t5:30 PM - 7:30 PM | Physics',
     3:' Wednesday\n\t8:15 PM - 10:15 PM | Chemistry',
-    4:' Thursday\n\t5:30 PM - 7:30 PM | Physics',
+    4:' Thursday\n\t4:00 PM - 6:00 PM | Physics',
     5:' Friday\n\t8:15 PM - 10:15 PM | Chemistry',
     6:' Saturday\n\t9:30 AM - 4:00 PM | VMC',
     7:' Sunday\n\t9:30 AM - 4:00 PM | VMC',
