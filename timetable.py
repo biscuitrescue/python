@@ -7,7 +7,7 @@ x+=1
 
 print()
 
-days={
+days = {
 
     1:' Monday\n\tNone',
     2:' Tuesday\n\t5:30 PM - 7:30 PM | Physics',
