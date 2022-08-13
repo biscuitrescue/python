@@ -10,26 +10,28 @@ obj = con.connect(
     database="PROJECT"
 )
 
-class Window(Tk):
-    def __init__(self):
-        Frame.__init__(main, self)
-
-
 cur1 = obj.cursor()
+
+def check_username():
+    pass
 
 
 root = Tk()
 
 root.title("User Store")
 root.geometry("1200x800")
-root.configure(background="#1e1e2e")
+root.configure(background="#292d3e")
 
-main_frame = Frame(
+username = Entry(
     root,
-    bg="#1e1e2e",
+    bg="#bfbfbf",
+    fg="#000000"
 )
-main_frame.place(
-    width=1200, height=800
+username.insert(1, "Username")
+
+username.place(
+    height=40, width=250,
+    y=380, x=475
 )
 
 root.mainloop()
