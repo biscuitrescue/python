@@ -1,0 +1,69 @@
+exec --no-startup-id xss-lock --transfer-sleep-lock -- sustum --nofork
+exec_always picom
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioPlay  exec playerctl play-pause
+bindsym XF86AudioNext  exec playerctl next
+bindsym $mod+v exec pavucontrol
+floating_modifier $mod
+# start a terminal
+bindsym $mod+e exec emacs
+bindsym $mod+Shift+Return exec kitty -e ranger
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run -fn 'novamono for powerline' -nb '#1b1c26' -nf '#ffffff' -sb '#a1acff' -sf '#000000' -p 'RUN'
+# change focus
+# alternatively, you can use the cursor keys:
+# alternatively, you can use the cursor keys:
+# split in horizontal orientation
+# split in vertical orientation
+# enter fullscreen mode for the focused container
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+y layout tabbed
+# toggle tiling / floating
+# change focus between tiling / floating windows
+# focus the parent container
+# focus the child container
+# Define names for default workspaces for which we configure key bindings later on.
+# switch to workspace
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+0 workspace number $ws10
+# move focused container to workspace
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+0 move container to workspace number $ws10
+#assign [class="Alacritty"] $ws3
+assign [class="Spotify"] $ws10
+assign [class="MPlayer"] $ws4
+assign [class="Microsoft Teams - Preview"] $ws9
+# reload the configuration file
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# resize window (you can also use the mouse for that)
+        # These bindings trigger as soon as you enter the resize mode
+        # same bindings, but for the arrow keys
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Escape mode "default"
+# bar {
+# 		status_command ~/.config/bumblebee-status/bumblebee-status \
+# 				-p memory.format={used} root.path=/  date.format="%b %d %Y | %A" time.format="%I:%M %p" \
+#     separator   #268bd2
+#     statusline  #839496
+#     active_workspace    #fdf6e3 #6c71c4 #fdf6e3
+#     urgent_workspace    #dc322f #dc322f #fdf6e3
+client.focused #aed1dc #aed1dc #eee8d5 #aed1dc
+client.unfocused #073642 #073642 #93a1a1 #586e75
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#wallpapers
+#autostart
+#gaps
+gaps inner 10
+bindsym $mod+g exec compton; gaps inner all set 10; gaps outer all set 2
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
+# OSX-like area selection screenshots
