@@ -2,13 +2,17 @@
 
 stack = []
 
-def push():
-    pass
+
+def push(element):
+    stack.append(element)
 
 
 def pop():
-    pass
+    if len(stack) == 0:
+        return "Stack is Empty"
+    else:
+        return stack.pop()
 
 
 def display():
-    pass
+    return l[::-1]

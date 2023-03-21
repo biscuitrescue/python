@@ -6,4 +6,4 @@ class Person:
         self.age = age
 
     def __del__(self):
-        print("Object is being deconstructed.")
+        pass

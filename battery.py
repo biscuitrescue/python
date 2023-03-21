@@ -23,7 +23,7 @@ def check_capacity():
     with open("/sys/class/power_supply/BAT0/capacity") as f:
         capacity = f.readline().strip()
 
-    if int(capacity) <= 70:
+    if int(capacity) <= 30:
         return True, capacity
 
     return False
@@ -31,19 +31,11 @@ def check_capacity():
 
 while True:
 
-    if check_status() and check_capacity():
-        speech = gTTS(text = "Please Charge")
-        speech.save(".hehe.mp3")
-
+    if check_capacity() and check_status():
         run(
             f"notify-send 'Battery Critical -> { check_capacity()[1] }'",
             shell=True
         )
 
-        playsound('hehe.mp3')
-
-    else:
-        if exists('.hehe.mp3'):
-            remove('.hehe.mp3')
-
+        playsound('/home/cafo/lang/python/.hehe.mp3')
     sleep(60)
