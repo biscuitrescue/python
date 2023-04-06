@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 
-from os import listdir
-from os import getcwd
-from tkinter import *
-from PIL import ImageTk, Image
-from random import shuffle
+
+# import tkinter as ttk
+import customtkinter as ctk
 
 
+ctk.set_appearance_mode("System")  # Modes: system (default), light, dark
+ctk.set_default_color_theme("blue")  # Themes: blue (default), dark-blue, green
+
+
+root = ctk.CTk()
+
+
+root.mainloop()
