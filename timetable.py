@@ -72,4 +72,3 @@ today.del_content('all')
 # for i in range(len(days)):
 #     if i==x:
 #         print(days[x])
-
