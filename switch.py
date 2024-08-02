@@ -115,7 +115,7 @@ thing = {
     'polybar': ((0, (40, -5)), '.config/polybar/config.ini'),
     'nvim': ((-2, (12, -1)), '.config/nvim/init.vim'),
     'emacs': ((34, (18, -2)), '.doom.d/config.el'),
-    'zathura': ((-1, (8,-1)), '.config/zathura/zathurarc'),
+    'zathura': ((-1, (8, -1)), '.config/zathura/zathurarc'),
 }
 
 

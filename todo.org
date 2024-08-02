@@ -1,0 +1,13 @@
+#+title: Todo
+
+
+* Languages
+** Python ->
+*** Todo gui
+*** classes & objects
+** Web Dev ->
+*** JS
+*** HTML
+*** CSS
+** Rust ->
+** DSA
