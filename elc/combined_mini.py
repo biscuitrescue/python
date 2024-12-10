@@ -80,10 +80,16 @@ def hill_cipher(text, key, encrypt=True):
 
 # Plot Encryption and Decryption Times
 def plot_times(cipher_names, enc_times, dec_times):
-    x = np.arange(len(cipher_names))
-    width = 0.35
+    if len(cipher_names) != len(enc_times) or len(cipher_names) != len(dec_times):
+        print("Error: Mismatch between cipher names and time lists")
+        return
+
+    x = np.arange(len(cipher_names))  # Create an array of cipher names' indices
+    width = 0.35  # Bar width
 
     fig, ax = plt.subplots()
+
+    # Plotting encryption and decryption times
     ax.bar(x - width/2, enc_times, width, label='Encryption', color='skyblue')
     ax.bar(x + width/2, dec_times, width, label='Decryption', color='lightcoral')
 
@@ -93,7 +99,7 @@ def plot_times(cipher_names, enc_times, dec_times):
     ax.set_xticks(x)
     ax.set_xticklabels(cipher_names)
     ax.legend()
-    plt.tight_layout()
+    plt.tight_layout()  # Adjust layout
     plt.show()
 
 # Main Menu
@@ -143,6 +149,7 @@ def menu():
                 dec_times.append(0)
             else:
                 dec_times.append(time_taken)
+                enc_times.append(0)
 
         elif choice == '2':  # Playfair Cipher
             file_input = input("Read text from file? (y/n): ").lower() == 'y'
@@ -176,6 +183,7 @@ def menu():
                 dec_times.append(0)
             else:
                 dec_times.append(time_taken)
+                enc_times.append(0)
 
         elif choice == '3':  # Hill Cipher
             file_input = input("Read text from file? (y/n): ").lower() == 'y'
@@ -214,6 +222,7 @@ def menu():
                 dec_times.append(0)
             else:
                 dec_times.append(time_taken)
+                enc_times.append(0)
 
         elif choice == '4':  # Show Graph
             plot_times(cipher_names, enc_times, dec_times)
